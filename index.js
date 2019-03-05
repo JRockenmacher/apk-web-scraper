@@ -13,6 +13,11 @@ function pgArrPopulator() {
     return pgeArr
 }
 
+// create a function that will populate the urls to ea wod page 
+function wodPgPopulator() {
+
+}
+
 function searchPage(pageNumber) {
     return fetch(`${baseUrl}${pageNumber}/`)
     .then(res => res.text())
@@ -30,11 +35,15 @@ function searchPageArr(){
                 const $element = $(element)
                 // console.log($element.text())
                 const $link = $element.find('a')
-                console.log($link.attr('href'))
+                // console.log($link.attr('href'))
+                const $wodPage = $link.attr('href')
+                console.log($wodPage)
             })
             })
     });
-}
+};
+
+
 // set a loop that will loop thru all 61 pages without needing to write the whole arr
 // for(let i=0; i<61; i++)
 
